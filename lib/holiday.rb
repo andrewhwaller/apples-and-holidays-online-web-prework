@@ -52,11 +52,20 @@ def all_winter_holiday_supplies(holiday_hash)
   winter_supplies
 end
 
+# def all_supplies_in_holidays(holiday_hash)
+#   holiday_hash.each do |season, holiday|
+#     puts "#{season.capitalize}:"
+#     holiday.each do |holiday, supplies|
+#       puts "  #{holiday.to_s.split.map {|holiday| holiday.capitalize!} }: #{supplies.join(", ")}"
+#     end
+#   end
+# end
+
 def all_supplies_in_holidays(holiday_hash)
-  holiday_hash.each do |season, holiday|
+  holiday_hash.each do |season, holidays|
     puts "#{season.capitalize}:"
-    holiday.each do |holiday, supplies|
-      puts "  #{holiday.to_s.split.map {|holiday| holiday.capitalize!} }: #{supplies.join(", ")}"
+    holidays.each do |holiday, supplies|
+      puts"  #{holiday.to_s.split('_').map {|w| w.capitalize }.join(' ') }: #{supplies.join(", ")}"
     end
   end
 end
